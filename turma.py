@@ -6,11 +6,12 @@ class Turma:
 
   def cadastrarAlunos(self, alunos):    
     for i in alunos:
-      self.turma.append(i);
-      if((self.menorNota == None) or (self.menorNota.nota > i.nota)):
-        self.menorNota = i;
-      elif((self.maiorNota == None) or (self.menorNota.nota < i.nota)):
-        self.maiorNota = i;                 
+      if(i.nota >= 0 and i.nota <= 10):
+        self.turma.append(i);
+        if((self.menorNota == None) or (self.menorNota.nota > i.nota)):
+          self.menorNota = i;
+        if((self.maiorNota == None) or (self.maiorNota.nota < i.nota)):
+          self.maiorNota = i;                 
 
   def mostrarAlunos(self):  
     print('Quantidade de alunos:', len(self.turma));
